@@ -5,3 +5,42 @@
   appear Must set transitionAppear={true} on animation component
 */
 
+.order-enter {
+  transform: translateX(-120%);
+  will-change: transform;
+  transition: all 500ms;
+  &.order-enter-active {
+    transform: translateX(0%);
+  }
+}
+.order-leave {
+  transform: translateX(0%);
+  will-change: transform;
+  transition: all 500ms;
+  &.order-leave-active {
+    transform: translateX(-120%);
+  }
+}
+
+.count {
+  position: relative;
+}
+.count-enter {
+  transform: translateY(120%);
+  will-change: transform, opacity;
+  transition: all 250ms;
+  &.count-enter-active {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.count-leave {
+  transform: translateY(0%);
+  will-change: transform, opacity;
+  opacity: 1;
+  transition: all 250ms;
+  position: absolute;top:0;left:0;
+  &.count-leave-active {
+    transform: translateY(-120%);
+  }
+}
